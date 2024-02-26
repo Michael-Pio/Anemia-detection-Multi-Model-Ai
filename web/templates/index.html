@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anemia Symptom Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='AnemiaBG.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            /* Add the border style */
+            border: 2px solid #007bff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #symptomForm {
+            margin-bottom: 30px;
+        }
+
+        .symptoms label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #imageInput {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            text-align: center;
+            background-color: gold;
+            border: 2px solid #007bff;
+            border-radius: 99px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        #result h2 {
+            color: #333;
+        }
+
+        #result p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 2px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 45%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .instructions {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Style for hiding input element */
+        #file-input1 {
+            display: none;
+        }
+
+        #file-input2 {
+            display: none;
+        }
+
+        #file-input3 {
+            display: none;
+        }
+
+        /* Added styles for the button */
+        .select-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1ef901;
+            color: #fff;
+            border: none;
+            border-radius: 5mm;
+            cursor: pointer;
+            float: inline-end;
+            margin-bottom: inherit;
+        }
+
+        .img-title {
+            text-align: center;
+            /* Center align the text */
+            margin-bottom: 20px;
+            /* Add some space below the title */
+        }
+
+        .img-title h1 {
+            font-size: 24px;
+            /* Set the font size */
+            color: #333;
+            /* Set the text color */
+            margin: 0;
+            /* Remove any default margins */
+            padding: 10px;
+            /* Add some padding around the title */
+            background-color: #fff104;
+            /* Add a background color */
+            border-radius: 5px;
+            /* Add rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Add a subtle box shadow */
+        }
+
+        .result-btn {
+            text-align: center;
+            /* Center align the button */
+            margin-top: 20px;
+            /* Add some space above the button */
+        }
+
+        .result-btn button {
+            padding: 10px 20px;
+            /* Add padding to the button */
+            font-size: 16px;
+            /* Set the font size */
+            color: #fff;
+            /* Set the text color */
+            background-color: #1ef901;
+            /* Set the background color */
+            border: none;
+            /* Remove the border */
+            border-radius: 5mm;
+            /* Add rounded corners */
+            cursor: pointer;
+            /* Change cursor to pointer on hover */
+        }
+
+        .result-btn button:hover {
+            background-color: #0f7002;
+            /* Darken the background color on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="headingClass">Anemia Symptom Checker</h1>
+
+        <form id="symptomForm" class="bodyClass">
+            <h2>Symptoms:</h2>
+            <div class="symptoms">
+                <label><input type="checkbox" name="symptom" value="General Fatigue">General Fatigue</label><br>
+                <label><input type="checkbox" name="symptom" value="Weakness">Weakness</label><br>
+                <label><input type="checkbox" name="symptom" value="Shortness of Breath">Shortness of Breath</label><br>
+                <label><input type="checkbox" name="symptom" value="Pale Skin">Pale Skin</label><br>
+                <label><input type="checkbox" name="symptom" value="Rapid Heartbeat">Rapid Heartbeat</label><br>
+                <label><input type="checkbox" name="symptom" value="Dizziness or Lightheadedness">Dizziness or
+                    Lightheadedness</label><br>
+                <label><input type="checkbox" name="symptom" value="Cold Hands and Feet">Cold Hands and Feet</label><br>
+                <label><input type="checkbox" name="symptom" value="Brittle Nails">Brittle Nails</label><br>
+                <label><input type="checkbox" name="symptom" value="Headaches">Headaches</label><br>
+                <label><input type="checkbox" name="symptom" value="Poor Concentration">Poor Concentration</label><br>
+                <label><input type="checkbox" name="symptom" value="Chest Pain">Chest Pain</label><br>
+                <label><input type="checkbox" name="symptom" value="Restless Legs">Restless Legs</label><br>
+                <!-- Add more symptoms here -->
+            </div>
+
+
+            <div class="container">
+                <div class="img-title">
+                    <h1>Eye conjuctiva</h1>
+                </div>
+                <div class="image-container">
+                    <img id="image1" src="{{ url_for('static', filename='eyeConjuntiva.jpg') }}"
+                        alt="Image 1">
+                    <img id="selected-image1" src="{{ url_for('static',filename='empty.jpg') }}" alt="Selected Image">
+                </div>
+                <!-- Added a button and hidden input element -->
+                <button class="select-button" onclick="document.getElementById('file-input1').click()">Select
+                    Image</button>
+                <input type="file" name = "image1" id="file-input1" onchange="displaySelectedImage(event,'selected-image1')">
+                <div class="instructions">
+                    <h3>Instructions:</h3>
+                    <ol> <li>Pull down your lower eyelid and look up to display the conjunctival color clearly.</li> <li>Use a flashlight if lighting is inadequate.</li> <li>Ensure the image is focused and not blurry.</li> <li>Avoid obstruction from eyelashes or tears over the eye.</li> </ol>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="img-title">
+                    <h1>Palm</h1>
+                </div>
+                <div class="image-container">
+                    <img id="image2" src="{{ url_for('static', filename='Palm.jpg') }}"
+                        alt="Image 2">
+                    <img id="selected-image2" src="{{ url_for('static',filename='empty.jpg') }}" alt="Selected Image">
+                </div>
+                <!-- Added a button and hidden input element -->
+                <button class="select-button" onclick="document.getElementById('file-input2').click()">Select
+                    Image</button>
+                <input type="file" name = "image2" id="file-input2" onchange="displaySelectedImage(event,'selected-image2')">
+                <div class="instructions">
+                    <h3>Instructions:</h3>
+                    <ol> <li>Wash and dry your hands</li> <li>Find a bright place</li> <li>Hold your camera 10 cm from your palm</li> <li>Take and save a picture</li> <li>Analyze the image for anemia</li> </ol>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="img-title">
+                    <h1>Finger Nails</h1>
+                </div>
+                <div class="image-container">
+                    <img id="image3" src="{{ url_for('static', filename='fingerNails.jpg') }}"
+                        alt="Image 3">
+                    <img id="selected-image3" src="{{ url_for('static',filename='empty.jpg') }}" alt="Selected Image">
+                </div>
+                <!-- Added a button and hidden input element -->
+                <button class="select-button" onclick="document.getElementById('file-input3').click()">Select
+                    Image</button>
+                <input type="file" name = "image3" id="file-input3" onchange="displaySelectedImage(event,'selected-image3')">
+                <div class="instructions">
+                    <h3>Instructions:</h3>
+                    <ol> <li>Wash and dry your hands. Make sure your nails are clean and free of any polish, dirt, or injuries that may affect the color of your nail beds.</li> <li>Find a bright place with natural or artificial light. Avoid direct sunlight or shadows that may alter the color of your nails.</li> <li>Hold your smartphone camera horizontally and position it about 10 cm away from your nails. Make sure your nails fill the entire screen and are in focus. Avoid any glare or reflection on the screen.</li> <li>Take a picture of your nails.</li> </ol>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="result-btn">
+                <button type="submit">Get Result</button>
+            </div>
+        </form>
+        <div id="result">
+            <br>
+            <div id="learnMoreDiv">
+                <a href="/moreinfo" class="learn-more-btn">Learn More</a>
+            </div>
+            <br>
+        </div> <!-- Add the result div here -->
+
+    </div>
+    </div>
+
+    <script>
+        // JavaScript function to display selected image
+        function displaySelectedImage(event, selectedImageId) {
+            var selectedImage = document.getElementById(selectedImageId);
+            selectedImage.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
+
+    <script>
+        document.getElementById('symptomForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+
+            fetch('/process', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.innerHTML = '<h2>Prediction Results:</h2>';
+                    const predictionResult = data.result;
+                    const confidenceLevel = data.confidence;
+                    resultDiv.innerHTML += `<p>Test Result: ${predictionResult}</p>`;
+                    resultDiv.innerHTML += `<p>Confidence: ${confidenceLevel}</p><br><br>`;
+
+                    // Add the "Learn More" button
+                    const learnMoreBtn = document.createElement('a');
+                    learnMoreBtn.href = '/moreinfo';
+                    learnMoreBtn.className = 'learn-more-btn';
+                    learnMoreBtn.innerText = 'Learn More';
+                    resultDiv.appendChild(learnMoreBtn);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.innerHTML = '<h3>Error:</h3><p>Failed to fetch prediction. Please try again later.</p>';
+                });
+        });
+    </script>
+</body>
+
+</html>

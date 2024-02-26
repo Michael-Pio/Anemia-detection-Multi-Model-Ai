@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anemia Awareness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 style="text-align: center ; font-size: 50px; font-family: 'Times New Roman', Times, serif;" >Anemia Awareness</h1>
+                <ul>
+                    <li><a href="#causes">Causes</a></li>
+                    <li><a href="#symptoms">Symptoms</a></li>
+                    <li><a href="#dangers">Dangers</a></li>
+                    <li><a href="#prevention">Prevention</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>What is Anemia?</h2>
+            <p>Anemia is a condition that occurs when your blood lacks enough healthy red blood cells or hemoglobin. Learn more about its causes, symptoms, dangers, and prevention methods.</p>
+            <a href="#causes" class="cta-btn">Learn More</a>
+        </div>
+    </section>
+
+
+    <section id="causes">
+        <div class="container">
+            <h2>Causes of Anemia</h2>
+            <p>Explore the various factors that can lead to anemia, including nutritional deficiencies, chronic diseases, and genetic disorders.</p>
+            <div class="causes-list">
+                <div class="cause">
+                    <h3>Nutritional Deficiencies</h3>
+                    <p>Iron deficiency anemia: Lack of iron in the diet or poor absorption of iron by the body is a common cause of anemia.</p>
+                    <p>Vitamin B12 deficiency anemia: Insufficient intake of vitamin B12 or impaired absorption can lead to this type of anemia.</p>
+                    <!-- Add more nutritional deficiency causes if needed -->
+                </div>
+                <div class="cause">
+                    <h3>Chronic Diseases</h3>
+                    <p>Chronic kidney disease: Impaired kidney function affects the production of erythropoietin, a hormone responsible for red blood cell production.</p>
+                    <p>Inflammatory diseases: Conditions like rheumatoid arthritis and lupus can lead to chronic inflammation, which interferes with red blood cell production.</p>
+                    <!-- Add more chronic disease causes if needed -->
+                </div>
+                <div class="cause">
+                    <h3>Hemolysis</h3>
+                    <p>Hemolytic anemia: Destruction of red blood cells (hemolysis) can be caused by inherited conditions, autoimmune disorders, or infections.</p>
+                    <!-- Add more hemolysis-related causes if needed -->
+                </div>
+                <!-- Add more causes if desired -->
+            </div>
+        </div>
+    </section>
+
+    <section id="symptoms">
+        <div class="container">
+            <h2>Common Symptoms of Anemia</h2>
+            <div class="symptoms-list">
+                <div class="symptom">
+                    <img src = "{{ url_for('static', filename='fatigue.jpg') }}" alt="Fatigue">
+                    <h3>Fatigue</h3>
+                    <p>Feeling excessively tired or having a lack of energy, even after adequate rest or sleep.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='pale.jpg') }}" alt="Pale Skin">
+                    <h3>Pale Skin</h3>
+                    <p>The skin may appear paler than usual, especially in the face, nails, and inside the mouth.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='shortnessOfBreath.jpg') }}" alt="Shortness of Breath">
+                    <h3>Shortness of Breath</h3>
+                    <p>Feeling breathless or having difficulty breathing, particularly during physical activity.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='dizziness.jpg') }}" alt="Dizziness">
+                    <h3>Dizziness or Lightheadedness</h3>
+                    <p>Feeling dizzy or faint, especially when standing up quickly.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='weakness.jpg') }}" alt="Weakness">
+                    <h3>Weakness</h3>
+                    <p>Experiencing physical weakness and a reduced ability to perform daily tasks.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='coldHandsFeet.jpg') }}" alt="Cold Hands and Feet">
+                    <h3>Cold Hands and Feet</h3>
+                    <p>Having cold extremities due to decreased blood flow.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='rapidHeartbeat.jpg') }}" alt="Rapid or Irregular Heartbeat">
+                    <h3>Rapid or Irregular Heartbeat</h3>
+                    <p>Palpitations or an increased heart rate, especially during exertion.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='brittle.jpg') }}" alt="Brittle Nails">
+                    <h3>Brittle Nails</h3>
+                    <p>Nails becoming weak and prone to breaking easily.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='headaches.jpg') }}" alt="Headaches">
+                    <h3>Headaches</h3>
+                    <p>Frequent headaches or migraines, sometimes accompanied by dizziness.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='restlessLeg.jpg') }}" alt="Restless Legs Syndrome">
+                    <h3>Restless Legs Syndrome</h3>
+                    <p>An uncomfortable sensation in the legs, often relieved by movement.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='soretounge.jpg') }}" alt="Soreness of the Tongue">
+                    <h3>Soreness of the Tongue</h3>
+                    <p>The tongue may become swollen or sore, leading to difficulties in speaking or swallowing.</p>
+                </div>
+                <div class="symptom">
+                    <img src="{{ url_for('static', filename='unusualCraving.jpg') }}" alt="Unusual Cravings">
+                    <h3>Unusual Cravings</h3>
+                    <p>Craving non-food items, such as ice, clay, or dirt (a condition known as pica).</p>
+                </div>
+                <!-- Add more symptoms if desired -->
+            </div>
+        </div>
+    </section>
+       
+    <!-- ...Previous content... -->
+
+<section id="dangers">
+    <div class="container">
+        <h2>Potential Dangers of Anemia</h2>
+        <p>Learn about the potential risks and complications associated with untreated or severe anemia.</p>
+        <div class="dangers-list">
+            <div class="danger">
+                <h3>Cardiovascular Issues</h3>
+                <p>Untreated anemia can strain the heart as it needs to work harder to supply oxygen to the body.</p>
+                <p>Severe anemia may lead to an irregular heartbeat or heart failure.</p>
+            </div>
+            <div class="danger">
+                <h3>Weakened Immune System</h3>
+                <p>Anemia can weaken the immune system, making individuals more susceptible to infections and illnesses.</p>
+            </div>
+            <div class="danger">
+                <h3>Neurological Complications</h3>
+                <p>Severe anemia may cause cognitive problems, difficulty concentrating, and memory issues.</p>
+            </div>
+            <div class="danger">
+                <h3>Infections</h3>
+                <p>Individuals with anemia may be at higher risk of infections due to reduced immunity.</p>
+            </div>
+            <div class="danger">
+                <h3>Delayed Wound Healing</h3>
+                <p>Anemia can slow down the healing process of wounds and injuries.</p>
+            </div>
+            <div class="danger">
+                <h3>Growth and Development Issues</h3>
+                <p>In children and teenagers, untreated anemia can hinder normal growth and development.</p>
+            </div>
+            <!-- Add more dangers if desired -->
+        </div>
+    </div>
+</section>
+
+
+    <section id="prevention">
+        <div class="container">
+            <h2>Prevention and Management of Anemia</h2>
+            <p>Explore ways to prevent anemia and how to manage the condition if diagnosed.</p>
+            <div class="prevention-list">
+                <div class="prevention">
+                    <h3>Healthy Diet</h3>
+                    <p>Eat a balanced diet rich in iron, vitamin B12, and folic acid to prevent nutritional deficiency anemia.</p>
+                </div>
+                <div class="prevention">
+                    <h3>Supplements</h3>
+                    <p>If at risk of anemia, consider taking iron, vitamin B12, or folic acid supplements under medical guidance.</p>
+                </div>
+                <div class="prevention">
+                    <h3>Regular Screening</h3>
+                    <p>Undergo regular health check-ups and screenings to detect anemia early and manage it effectively.</p>
+                </div>
+                <div class="prevention">
+                    <h3>Treat Underlying Conditions</h3>
+                    <p>If anemia is caused by a chronic disease, managing the underlying condition can help improve anemia.</p>
+                </div>
+                <div class="prevention">
+                    <h3>Manage Menstrual Bleeding</h3>
+                    <p>If heavy menstrual bleeding contributes to anemia, consult a healthcare professional for appropriate management.</p>
+                </div>
+                <div class="prevention">
+                    <h3>Avoid Risky Behaviors</h3>
+                    <p>Avoid practices like pica (consumption of non-food items) that can lead to anemia.</p>
+                </div>
+                <!-- Add more prevention and management strategies if desired -->
+            </div>
+        </div>
+    </section>
+
+<!-- ...Remaining content... -->
+
+
+<footer>
+    <div class="container">
+        <p>&copy; Michael Pio 2024</p>
+        <p>Designed by Michael Pio and Team</p>
+        <p>Thanks for visiting!</p> 
+    </div>
+
+</footer>
+
+
+</body>
+</html>

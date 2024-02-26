@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+.symptoms {
+    margin-bottom: 15px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+.headingClass{
+    background-color: aqua;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.bodyClass{
+    /* background-color: aqua; */
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+        /* ... (previous styles remain the same) ... */
+
+
+
+        .learn-more-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            text-decoration: none;
+            /* position: absolute; */
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .learn-more-btn:hover {
+            background-color: #0056b3;
+        }
+
+
