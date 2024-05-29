@@ -1,4 +1,6 @@
 DataSet
+NewDataWorkspace
 __pycache__
 Backup
 *.h5
+*.zip
