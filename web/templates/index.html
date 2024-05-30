@@ -75,6 +75,7 @@
             font-weight: bold;
             color: #007bff;
             margin-bottom: 10px;
+            text-align: left;
         }
 
         .container {
@@ -304,12 +305,18 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    const resultDiv = document.getElementById('result');
-                    resultDiv.innerHTML = '<h2>Prediction Results:</h2>';
+                    const resultDiv = document.getElementById('result')
+                    resultDiv.innerHTML = '<h2>Prediction Results:</h2>'
                     const predictionResult = data.result;
-                    const confidenceLevel = data.confidence;
-                    resultDiv.innerHTML += `<p>Test Result: ${predictionResult}</p>`;
-                    resultDiv.innerHTML += `<p>Confidence: ${confidenceLevel}</p><br><br>`;
+                    const symptom_res = data.symptom_res;
+                    const conjunctiva_res = data.conjunctiva_res;
+                    const palm_res = data.palm_res;
+                    const fingernail_res = data.fingernail_res;
+                    resultDiv.innerHTML += `<p style="text-align: center; font-size: 24px ;color: ${predictionResult === 'Possitive' ? 'red' : 'green'};">Test Result: ${predictionResult}</p>`
+                    resultDiv.innerHTML += `<p>Test 0 [Symptoms Model]: ${symptom_res}</p>`
+                    resultDiv.innerHTML += `<p>Test 1 [Conjunctiva Model]: ${conjunctiva_res}</p>`
+                    resultDiv.innerHTML += `<p>Test 2 [Palm Model]: ${palm_res}</p>`
+                    resultDiv.innerHTML += `<p>Test 3 [FingerNail Model]: ${fingernail_res}</p><br><br>:`
 
                     // Add the "Learn More" button
                     const learnMoreBtn = document.createElement('a');
