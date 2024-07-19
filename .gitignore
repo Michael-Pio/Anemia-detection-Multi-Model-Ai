@@ -4,3 +4,4 @@ __pycache__
 Backup
 *.h5
 *.zip
+web/uploads

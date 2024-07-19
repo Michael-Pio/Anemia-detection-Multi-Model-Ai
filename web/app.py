@@ -60,15 +60,15 @@ def predict_anemia(model, img_path, image_size=(128, 128)) -> float:
         return 0
 
 def predict_conjunctiva():
-    return float(predict_anemia(conjunctiva_model, r'web\static\uploaded_image1.png'))
+    return float(predict_anemia(conjunctiva_model, r'web\uploads\uploaded_image1.png'))
 
 
 def predict_palm(): 
-    return float(predict_anemia(palm_model, r'web\static\uploaded_image2.png'))
+    return float(predict_anemia(palm_model, r'web\uploads\uploaded_image2.png'))
 
 
 def predict_fingerNail(): 
-    return float(predict_anemia(fingerNail_model, r'web\static\uploaded_image3.png'))
+    return float(predict_anemia(fingerNail_model, r'web\uploads\uploaded_image3.png'))
 
 
 
@@ -90,7 +90,7 @@ def process():
         image_file = request.files['image1']
         if image_file.filename != '':
             # Save the uploaded image to a temporary folder
-            image_path = os.path.join('web', 'static', 'uploaded_image1.png')
+            image_path = os.path.join('web', 'uploads', 'uploaded_image1.png')
             image = Image.open(image_file)
             image.save(image_path)
         else:
@@ -99,7 +99,7 @@ def process():
         image_file = request.files['image2']
         if image_file.filename != '':
             # Save the uploaded image to a temporary folder
-            image_path = os.path.join('web', 'static', 'uploaded_image2.png')
+            image_path = os.path.join('web', 'uploads', 'uploaded_image2.png')
             image = Image.open(image_file)
             image.save(image_path)
         else:
@@ -108,7 +108,7 @@ def process():
         image_file = request.files['image3']
         if image_file.filename != '':
             # Save the uploaded image to a temporary folder
-            image_path = os.path.join('web', 'static', 'uploaded_image3.png')
+            image_path = os.path.join('web', 'uploads', 'uploaded_image3.png')
             image = Image.open(image_file)
             image.save(image_path)
         else:
